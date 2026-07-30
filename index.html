@@ -16,6 +16,13 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%235546E0'/%3E%3Ccircle cx='50' cy='50' r='20' fill='white'/%3E%3C/svg%3E">
 </head>
 <body>
+<div class="navbar"><div class="navbar-in" role="tablist" aria-label="Secciones del informe">
+<button type="button" role="tab" id="tab-0" aria-controls="panel-0" aria-selected="true" data-ancla="metodo">Método</button>
+<button type="button" role="tab" id="tab-1" aria-controls="panel-1" aria-selected="false" data-ancla="faltante">La base</button>
+<button type="button" role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false" data-ancla="campanas">Campañas</button>
+<button type="button" role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false" data-ancla="control">Resultado</button>
+<button type="button" role="tab" id="tab-4" aria-controls="panel-4" aria-selected="false" data-ancla="cerrar">Pendientes</button>
+</div></div>
 <style>
   :root {
     color-scheme: light;
@@ -199,54 +206,53 @@
   body { margin: 0; background: var(--bg); }
   img, svg { max-width: 100%; height: auto; }
 
-  /* ---- pestañas ---- */
-  .tabs { display: flex; flex-direction: column; gap: var(--gap); }
-  .tabbar {
-    display: flex; gap: .25rem; overflow-x: auto; scrollbar-width: none;
-    position: sticky; top: 0; z-index: 20;
-    background: var(--bg); padding: .7rem 0 0;
-    border-bottom: 2px solid var(--fg);
+  /* ---- barra de navegación, flotante arriba de todo ---- */
+  .navbar {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--bg);
+    border-bottom: 1px solid var(--rule);
+    box-shadow: 0 6px 18px -14px rgba(20, 19, 28, .55);
   }
-  .tabbar::-webkit-scrollbar { display: none; }
-  .tabbar button {
-    font-family: var(--f-mono); font-size: .705rem; font-weight: 600;
+  .navbar-in {
+    max-width: 54rem; margin: 0 auto;
+    padding: .5rem clamp(1.1rem, 5vw, 2rem);
+    display: flex; align-items: center; gap: .25rem;
+    overflow-x: auto; scrollbar-width: none;
+  }
+  .navbar-in::-webkit-scrollbar { display: none; }
+  .navbar button {
+    font-family: var(--f-mono); font-size: .7rem; font-weight: 600;
     letter-spacing: .11em; text-transform: uppercase;
     padding: .62em 1em; margin: 0; cursor: pointer; white-space: nowrap;
     color: var(--fg-muted); background: transparent;
-    border: 1px solid var(--rule); border-bottom: none;
-    border-radius: 3px 3px 0 0;
+    border: 1px solid transparent; border-radius: 3px;
   }
-  .tabbar button[aria-selected="true"] {
-    background: var(--fg); color: var(--bg); border-color: var(--fg);
+  .navbar button[aria-selected="true"] { background: var(--fg); color: var(--bg); }
+  .navbar button:hover:not([aria-selected="true"]) {
+    color: var(--accent); background: var(--accent-wash);
   }
-  .tabbar button:hover:not([aria-selected="true"]) {
-    color: var(--accent); border-color: var(--accent);
-  }
-  .tabbar button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .navbar button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
-  /* En pantalla angosta las 5 pestañas no entran (necesitan ~479px). Dejarlas
-     scrolleando esconde la última detrás de un gesto que nadie descubre, así
-     que abajo de 46rem pasan a chips que envuelven y se ven todas. */
+  /* la barra ya encabeza la página: el bloque de título no necesita tanto aire */
+  .page { padding-top: clamp(1.5rem, 4vw, 2.6rem); }
+
+  /* En pantalla angosta las 5 no entran en una fila (necesitan ~479px). Dejarlas
+     scrolleando esconde la última detrás de un gesto que nadie descubre, así que
+     abajo de 46rem envuelven y se ven todas. */
   @media (max-width: 46rem) {
-    .tabbar {
-      flex-wrap: wrap; gap: .35rem; overflow-x: visible;
-      padding: .6rem 0; border-bottom: 1px solid var(--rule);
-    }
-    .tabbar button {
-      border: 1px solid var(--rule); border-radius: 3px;
-      padding: .5em .8em; font-size: .655rem; letter-spacing: .08em;
-    }
-    .tabbar button[aria-selected="true"] { border-color: var(--fg); }
-    .panel > section.rule-top:first-child { padding-top: .85rem; }
+    .navbar-in { flex-wrap: wrap; overflow-x: visible; gap: .3rem; padding: .5rem 1.1rem; }
+    .navbar button { font-size: .645rem; padding: .5em .72em; letter-spacing: .07em; }
   }
+
+  /* el ancla no puede quedar tapada por la barra: la altura la mide el JS */
+  section[id], .tabs { scroll-margin-top: calc(var(--nav-h, 4rem) + .7rem); }
 
   .panel { display: flex; flex-direction: column; gap: var(--gap); }
   /* [hidden] del navegador no gana contra display:flex — hay que declararlo */
   .panel[hidden] { display: none; }
   /* la primera sección del panel no repite la línea que ya trae la barra */
-  .panel > section.rule-top:first-child { border-top: none; padding-top: .35rem; }
+  .panel > section.rule-top:first-child { border-top: none; padding-top: 0; }
 
-  section[id] { scroll-margin-top: 4.5rem; }
 
   /* ---- pista visual de que la tabla scrollea (clave en mobile) ---- */
   .tw { position: relative; }
@@ -264,7 +270,7 @@
     html { scroll-behavior: auto; }
     .page { padding: 0; font-size: 10pt; line-height: 1.5; }
     .wrap { max-width: none; gap: 1.15rem; }
-    .flow, .tabbar { display: none; }
+    .flow, .navbar { display: none; }
 
     /* el PDF lleva TODO, sin importar qué pestaña estaba abierta */
     .panel[hidden], .panel { display: flex !important; }
@@ -313,13 +319,6 @@
 
   <!-- ============ METODOLOGÍA ============ -->
   <div class="tabs">
-<div class="tabbar" role="tablist" aria-label="Secciones del informe">
-<button type="button" role="tab" id="tab-0" aria-controls="panel-0" aria-selected="true" data-ancla="metodo">Método</button>
-<button type="button" role="tab" id="tab-1" aria-controls="panel-1" aria-selected="false" data-ancla="faltante">La base</button>
-<button type="button" role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false" data-ancla="campanas">Campañas</button>
-<button type="button" role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false" data-ancla="control">Resultado</button>
-<button type="button" role="tab" id="tab-4" aria-controls="panel-4" aria-selected="false" data-ancla="cerrar">Pendientes</button>
-</div>
 <div class="panel" role="tabpanel" id="panel-0" aria-labelledby="tab-0">
 <section class="rule-top" id="metodo">
     <div class="eyebrow">Antes de los números</div>
@@ -835,10 +834,18 @@
 
 <script>
 (function () {
+  var nav = document.querySelector('.navbar');
   var raiz = document.querySelector('.tabs');
-  if (!raiz) return;
-  var tabs = Array.prototype.slice.call(raiz.querySelectorAll('[role="tab"]'));
+  if (!nav || !raiz) return;
+  var tabs = Array.prototype.slice.call(nav.querySelectorAll('[role="tab"]'));
   var pans = Array.prototype.slice.call(raiz.querySelectorAll('[role="tabpanel"]'));
+
+  // la barra mide distinto en desktop (1 fila) que en mobile (2): que lo diga ella
+  function altura() {
+    document.documentElement.style.setProperty('--nav-h', nav.offsetHeight + 'px');
+  }
+  altura();
+  window.addEventListener('resize', altura);
   if (!tabs.length || tabs.length !== pans.length) return;   // ante la duda, dejar todo visible
 
   function mostrar(i, foco) {
