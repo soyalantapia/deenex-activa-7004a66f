@@ -102,15 +102,6 @@
   .rule-top { border-top: 2px solid var(--fg); padding-top: var(--gap); }
 
   header.masthead { display: flex; flex-direction: column; gap: 1rem; }
-  .masthead-top {
-    display: flex; flex-wrap: wrap; gap: .75rem 1.5rem;
-    justify-content: space-between; align-items: baseline;
-  }
-  .stamp {
-    font-family: var(--f-mono); font-size: .7rem; letter-spacing: .13em;
-    text-transform: uppercase; color: var(--accent-fg); background: var(--accent);
-    padding: .3em .7em; border-radius: 2px; white-space: nowrap;
-  }
 
   /* ---------- tablas ---------- */
   .tw { overflow-x: auto; -webkit-overflow-scrolling: touch; }
@@ -204,21 +195,42 @@
 
   /* ---- reset mínimo (en el artifact lo pone la plataforma; acá no) ---- */
   *, *::before, *::after { box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
   body { margin: 0; background: var(--bg); }
   img, svg { max-width: 100%; height: auto; }
 
-  /* ---- índice, para no scrollear a ciegas en el celular ---- */
-  .toc { display: flex; flex-wrap: wrap; gap: .4rem; }
-  .toc a {
-    font-family: var(--f-mono); font-size: .68rem; letter-spacing: .07em;
-    text-transform: uppercase; text-decoration: none;
-    color: var(--fg-muted); border: 1px solid var(--rule);
-    padding: .34em .62em; border-radius: 2px; white-space: nowrap;
+  /* ---- pestañas ---- */
+  .tabs { display: flex; flex-direction: column; gap: var(--gap); }
+  .tabbar {
+    display: flex; gap: .25rem; overflow-x: auto; scrollbar-width: none;
+    position: sticky; top: 0; z-index: 20;
+    background: var(--bg); padding: .7rem 0 0;
+    border-bottom: 2px solid var(--fg);
   }
-  .toc a:hover { color: var(--accent); border-color: var(--accent); }
-  section[id] { scroll-margin-top: 1.2rem; }
-  html { scroll-behavior: smooth; }
+  .tabbar::-webkit-scrollbar { display: none; }
+  .tabbar button {
+    font-family: var(--f-mono); font-size: .705rem; font-weight: 600;
+    letter-spacing: .11em; text-transform: uppercase;
+    padding: .62em 1em; margin: 0; cursor: pointer; white-space: nowrap;
+    color: var(--fg-muted); background: transparent;
+    border: 1px solid var(--rule); border-bottom: none;
+    border-radius: 3px 3px 0 0;
+  }
+  .tabbar button[aria-selected="true"] {
+    background: var(--fg); color: var(--bg); border-color: var(--fg);
+  }
+  .tabbar button:hover:not([aria-selected="true"]) {
+    color: var(--accent); border-color: var(--accent);
+  }
+  .tabbar button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .panel { display: flex; flex-direction: column; gap: var(--gap); }
+  /* [hidden] del navegador no gana contra display:flex — hay que declararlo */
+  .panel[hidden] { display: none; }
+  /* la primera sección del panel no repite la línea que ya trae la barra */
+  .panel > section.rule-top:first-child { border-top: none; padding-top: .35rem; }
+
+  section[id] { scroll-margin-top: 4.5rem; }
 
   /* ---- pista visual de que la tabla scrollea (clave en mobile) ---- */
   .tw { position: relative; }
@@ -233,31 +245,28 @@
   @page { size: A4; margin: 15mm 13mm 16mm; }
 
   @media print {
-    :root {
-      --bg:#fff; --surface:#F6F5FA; --fg:#000; --fg-muted:#333; --fg-faint:#555;
-      --thead-bg:#000; --thead-fg:#fff; --rule:#C4C2D4; --rule-strong:#8B88A0;
-      --accent:#3B2FB5; --accent-soft:#3B2FB5; --accent-wash:#EEECFB; --accent-fg:#fff;
-      --warn:#7A4606; --warn-wash:#FBF5EA; --warn-rule:#C9AE7E;
-    }
     html { scroll-behavior: auto; }
     .page { padding: 0; font-size: 10pt; line-height: 1.5; }
     .wrap { max-width: none; gap: 1.15rem; }
-    .toc, .flow { display: none; }
+    .flow, .tabbar { display: none; }
 
-    /* nada de títulos huérfanos al pie de página */
+    /* el PDF lleva TODO, sin importar qué pestaña estaba abierta */
+    .panel[hidden], .panel { display: flex !important; }
+    .panel > section.rule-top:first-child {
+      border-top: 2px solid var(--fg); padding-top: 1.1rem;
+    }
+
     h1, h2, h3 { break-after: avoid; }
     .call, .warn, .box, .why > div { break-inside: avoid; }
     tr, li { break-inside: avoid; }
     thead { display: table-header-group; }
     section { break-inside: auto; }
 
-    /* las tablas no scrollean en papel: que entren */
     .tw { overflow: visible; }
     .tw::after { display: none; }
     table { font-size: 8.2pt; min-width: 0; width: 100%; }
     thead th, tbody td { padding: .38rem .45rem; }
 
-    /* el bloque violeta sólido sería un manchón de tinta */
     .call { background: #fff; border: 1.2pt solid var(--accent); }
     .call h3 { color: var(--accent); }
     .call p { color: #000; }
@@ -268,6 +277,7 @@
 
   @media (prefers-reduced-motion: reduce) {
     * { animation: none !important; transition: none !important; }
+    html { scroll-behavior: auto; }
   }
 </style>
 
@@ -275,10 +285,7 @@
 <div class="wrap">
 
   <header class="masthead">
-    <div class="masthead-top">
-      <div class="eyebrow">HATSU × DEENEX</div>
-      <span class="stamp">V1 · corregida</span>
-    </div>
+    <div class="eyebrow">HATSU × DEENEX</div>
     <h1>Que cada cliente vuelva <em>solo.</em></h1>
     <p class="lede">Plan de campañas para agosto de 2026: a qué grupos de clientes le escribimos,
     por qué canal y con qué expectativa. Todos los números surgen del procesamiento de las bases
@@ -286,12 +293,19 @@
     <p class="kicker">Fecha de corte del análisis: 29 de julio de 2026</p>
   </header>
 
-  <nav class="toc" aria-label="Secciones del documento"><a href="#metodo">Método</a><a href="#alcance">Alcance</a><a href="#faltante">Dato faltante</a><a href="#mapa">Mapa</a><a href="#numeros">La base</a><a href="#ritmo">Ritmo</a><a href="#grupos">Grupos</a><a href="#contacto">Contacto</a><a href="#campanas">Campañas</a><a href="#porque">Por qué 1.873</a><a href="#calendario">Calendario</a><a href="#control">Control</a><a href="#expectativa">Expectativa</a><a href="#medicion">Medición</a><a href="#cerrar">Pendientes</a><a href="#nota">Metodología</a></nav>
-
   <div class="flow">Base &nbsp;→&nbsp; Grupos &nbsp;→&nbsp; Campañas &nbsp;→&nbsp; Medición &nbsp;↺</div>
 
   <!-- ============ METODOLOGÍA ============ -->
-  <section class="rule-top" id="metodo">
+  <div class="tabs">
+<div class="tabbar" role="tablist" aria-label="Secciones del informe">
+<button type="button" role="tab" id="tab-0" aria-controls="panel-0" aria-selected="true" data-ancla="metodo">Método</button>
+<button type="button" role="tab" id="tab-1" aria-controls="panel-1" aria-selected="false" data-ancla="faltante">La base</button>
+<button type="button" role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false" data-ancla="campanas">Campañas</button>
+<button type="button" role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false" data-ancla="control">Resultado</button>
+<button type="button" role="tab" id="tab-4" aria-controls="panel-4" aria-selected="false" data-ancla="cerrar">Pendientes</button>
+</div>
+<div class="panel" role="tabpanel" id="panel-0" aria-labelledby="tab-0">
+<section class="rule-top" id="metodo">
     <div class="eyebrow">Antes de los números</div>
     <h2>Cómo armamos los grupos</h2>
     <div class="box">
@@ -311,7 +325,8 @@
   </section>
 
   <!-- ============ ALCANCE ============ -->
-  <section class="rule-top" id="alcance">
+  
+<section class="rule-top" id="alcance">
     <div class="eyebrow">Alcance del análisis</div>
     <h2>Qué se procesó</h2>
     <ul class="plain">
@@ -341,7 +356,10 @@
   </section>
 
   <!-- ============ ADVERTENCIA ============ -->
-  <section class="rule-top" id="faltante">
+  
+</div>
+<div class="panel" role="tabpanel" id="panel-1" aria-labelledby="tab-1">
+<section class="rule-top" id="faltante">
     <div class="eyebrow">Hallazgo que condiciona el plan</div>
     <h2>El reporte de ventas no tiene toda la historia</h2>
     <div class="warn">
@@ -373,7 +391,8 @@
   </section>
 
   <!-- ============ MAPA ============ -->
-  <section class="rule-top" id="mapa">
+  
+<section class="rule-top" id="mapa">
     <div class="eyebrow">Dónde está cada persona</div>
     <h2>El mapa de la base</h2>
     <p>Toda persona que aparece en alguna de las dos bases entra en una sola fila de esta tabla.</p>
@@ -394,7 +413,8 @@
   </section>
 
   <!-- ============ LA BASE EN NÚMEROS ============ -->
-  <section class="rule-top" id="numeros">
+  
+<section class="rule-top" id="numeros">
     <div class="eyebrow">Lo que encontramos</div>
     <h2>La base en números</h2>
     <div class="tw">
@@ -413,7 +433,8 @@
   </section>
 
   <!-- ============ RITMO ============ -->
-  <section class="rule-top" id="ritmo">
+  
+<section class="rule-top" id="ritmo">
     <div class="eyebrow">El concepto central</div>
     <h2>Qué es el “ritmo” de un cliente</h2>
     <p><strong>El ritmo es el tiempo promedio que pasa entre las compras de una misma persona</strong>,
@@ -449,7 +470,8 @@
   </div>
 
   <!-- ============ GRUPOS ============ -->
-  <section class="rule-top" id="grupos">
+  
+<section class="rule-top" id="grupos">
     <div class="eyebrow">Los grupos</div>
     <h2>Lo que identificó el motor</h2>
     <p>El algoritmo cruza las cuatro señales de cada cliente y encuentra cuatro grupos.
@@ -494,7 +516,8 @@
   </section>
 
   <!-- ============ CONTACTO ============ -->
-  <section class="rule-top" id="contacto">
+  
+<section class="rule-top" id="contacto">
     <div class="eyebrow">Por qué canal llegamos</div>
     <h2>A quién se le puede escribir</h2>
     <div class="tw">
@@ -516,7 +539,10 @@
   </section>
 
   <!-- ============ CAMPAÑAS ============ -->
-  <section class="rule-top" id="campanas">
+  
+</div>
+<div class="panel" role="tabpanel" id="panel-2" aria-labelledby="tab-2">
+<section class="rule-top" id="campanas">
     <div class="eyebrow">Las campañas</div>
     <h2>Tres para agosto</h2>
     <p>Cada cliente entra en una sola campaña: no hay superposición entre listas.</p>
@@ -598,7 +624,8 @@
   </section>
 
   <!-- ============ POR QUÉ TAN POCOS ============ -->
-  <section class="rule-top" id="porque">
+  
+<section class="rule-top" id="porque">
     <div class="eyebrow">La pregunta obvia</div>
     <h2>Por qué escribimos a 1.873 y no a 25.000</h2>
     <div class="why">
@@ -622,7 +649,8 @@
   </section>
 
   <!-- ============ CALENDARIO ============ -->
-  <section class="rule-top" id="calendario">
+  
+<section class="rule-top" id="calendario">
     <div class="eyebrow">Cobertura completa</div>
     <h2>Cuándo le toca a cada uno</h2>
     <p>Las 25.483 personas de la base tienen un destino asignado. Ninguna queda sin explicación.</p>
@@ -649,7 +677,10 @@
   </section>
 
   <!-- ============ VOLUMEN Y CONTROL ============ -->
-  <section class="rule-top" id="control">
+  
+</div>
+<div class="panel" role="tabpanel" id="panel-3" aria-labelledby="tab-3">
+<section class="rule-top" id="control">
     <div class="eyebrow">Volumen y control</div>
     <h2>Cuánto se envía y contra qué se compara</h2>
     <p>En cada campaña se reserva un 15% de la lista que no recibe ningún mensaje. Ese grupo de control
@@ -682,7 +713,8 @@
   </section>
 
   <!-- ============ EXPECTATIVA ============ -->
-  <section class="rule-top" id="expectativa">
+  
+<section class="rule-top" id="expectativa">
     <div class="eyebrow">Expectativa</div>
     <h2>Qué resultado esperamos</h2>
     <p><strong>Las siguientes cifras son una proyección, no un dato medido.</strong> Cada campaña se
@@ -713,7 +745,8 @@
   </section>
 
   <!-- ============ MEDICIÓN ============ -->
-  <section class="rule-top" id="medicion">
+  
+<section class="rule-top" id="medicion">
     <div class="eyebrow">Medición</div>
     <h2>Cómo se comprueba el resultado</h2>
     <ul class="plain">
@@ -727,7 +760,10 @@
   </section>
 
   <!-- ============ DEFINICIONES ============ -->
-  <section class="rule-top" id="cerrar">
+  
+</div>
+<div class="panel" role="tabpanel" id="panel-4" aria-labelledby="tab-4">
+<section class="rule-top" id="cerrar">
     <div class="eyebrow">Próximos pasos</div>
     <h2>Definiciones para cerrar con HATSU</h2>
     <div class="tw">
@@ -747,7 +783,8 @@
   </section>
 
   <!-- ============ NOTA METODOLÓGICA ============ -->
-  <section class="rule-top" id="nota">
+  
+<section class="rule-top" id="nota">
     <div class="eyebrow">Nota metodológica</div>
     <h2>Qué es dato y qué es estimación</h2>
     <ul class="plain">
@@ -769,13 +806,74 @@
     </ul>
   </section>
 
-  <footer class="foot">
+  
+</div>
+</div>
+<footer class="foot">
     <span>DEENEX Activa · Plan de campañas HATSU · Agosto 2026</span>
     <span class="mono">deenex.tech</span>
   </footer>
 
 </div>
 </div>
+
+<script>
+(function () {
+  var raiz = document.querySelector('.tabs');
+  if (!raiz) return;
+  var tabs = Array.prototype.slice.call(raiz.querySelectorAll('[role="tab"]'));
+  var pans = Array.prototype.slice.call(raiz.querySelectorAll('[role="tabpanel"]'));
+  if (!tabs.length || tabs.length !== pans.length) return;   // ante la duda, dejar todo visible
+
+  function mostrar(i, foco) {
+    tabs.forEach(function (t, j) {
+      var on = j === i;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tabIndex = on ? 0 : -1;
+      pans[j].hidden = !on;
+    });
+    if (foco) tabs[i].focus();
+  }
+
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () {
+      mostrar(i);
+      if (history.replaceState) history.replaceState(null, '', '#' + t.dataset.ancla);
+      raiz.scrollIntoView({ block: 'start' });
+    });
+    t.addEventListener('keydown', function (e) {
+      var n = tabs.length, d = null;
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') d = (i + 1) % n;
+      else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') d = (i - 1 + n) % n;
+      else if (e.key === 'Home') d = 0;
+      else if (e.key === 'End') d = n - 1;
+      if (d !== null) { e.preventDefault(); mostrar(d, true); }
+    });
+  });
+
+  function desdeHash() {
+    var h = decodeURIComponent(location.hash.slice(1));
+    var el = h && document.getElementById(h);
+    if (!el) { mostrar(0); return; }
+    var pan = el.closest('[role="tabpanel"]');
+    var i = pan ? pans.indexOf(pan) : -1;
+    mostrar(i < 0 ? 0 : i);
+    if (el !== pan) setTimeout(function () { el.scrollIntoView({ block: 'start' }); }, 60);
+  }
+  window.addEventListener('hashchange', desdeHash);
+  desdeHash();
+
+  // al imprimir hay que ver todo, aunque haya una sola pestaña abierta
+  function todo(v) { pans.forEach(function (p) { p.hidden = false; }); }
+  if (window.matchMedia) {
+    var mm = window.matchMedia('print');
+    (mm.addEventListener ? mm.addEventListener.bind(mm, 'change') : mm.addListener.bind(mm))(
+      function (e) { if (e.matches) todo(); else desdeHash(); });
+  }
+  window.addEventListener('beforeprint', todo);
+  window.addEventListener('afterprint', desdeHash);
+})();
+</script>
 
 </body>
 </html>
