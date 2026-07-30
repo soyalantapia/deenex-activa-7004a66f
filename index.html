@@ -1,0 +1,784 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HATSU · Plan de campañas agosto 2026</title>
+<meta name="description" content="Plan de campanas de agosto 2026 para HATSU. Segmentacion de la base de clientes con el motor de DEENEX Activa.">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="googlebot" content="noindex, nofollow">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#5546E0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E0D15" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HATSU x DEENEX - Plan de campanas agosto 2026">
+<meta property="og:description" content="A que grupos de clientes le escribimos en agosto, por que canal y con que expectativa.">
+<meta property="og:locale" content="es_AR">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%235546E0'/%3E%3Ccircle cx='50' cy='50' r='20' fill='white'/%3E%3C/svg%3E">
+</head>
+<body>
+<style>
+  :root {
+    --bg:          #FFFFFF;
+    --surface:     #FAF9FE;
+    --fg:          #14131C;
+    --fg-muted:    #62617A;
+    --fg-faint:    #8A88A0;
+    --accent:      #5546E0;
+    --accent-soft: #6F62F0;
+    --accent-wash: #F3F1FE;
+    --accent-fg:   #FFFFFF;
+    --rule:        #E4E2F0;
+    --rule-strong: #C9C6E0;
+    --thead-bg:    #14131C;
+    --thead-fg:    #FFFFFF;
+    --warn:        #9A5A08;
+    --warn-wash:   #FDF7EC;
+    --warn-rule:   #E7D2A8;
+    --good:        #1D6B4F;
+
+    --f-sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+              "Helvetica Neue", Arial, sans-serif;
+    --f-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas,
+              "Liberation Mono", monospace;
+
+    --measure: 68ch;
+    --gap:     clamp(1.5rem, 4vw, 2.25rem);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:          #0E0D15;
+      --surface:     #171622;
+      --fg:          #EDECF6;
+      --fg-muted:    #A3A1B8;
+      --fg-faint:    #7B7992;
+      --accent:      #9587FF;
+      --accent-soft: #8375F5;
+      --accent-wash: #1C1A2E;
+      --accent-fg:   #0E0D15;
+      --rule:        #2A2840;
+      --rule-strong: #3C3A56;
+      --thead-bg:    #262338;
+      --thead-fg:    #EDECF6;
+      --warn:        #E0A85C;
+      --warn-wash:   #201A10;
+      --warn-rule:   #4A3A1E;
+      --good:        #6FCFA5;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg:#0E0D15; --surface:#171622; --fg:#EDECF6; --fg-muted:#A3A1B8; --fg-faint:#7B7992;
+    --accent:#9587FF; --accent-soft:#8375F5; --accent-wash:#1C1A2E; --accent-fg:#0E0D15;
+    --rule:#2A2840; --rule-strong:#3C3A56; --thead-bg:#262338; --thead-fg:#EDECF6;
+    --warn:#E0A85C; --warn-wash:#201A10; --warn-rule:#4A3A1E; --good:#6FCFA5;
+  }
+  :root[data-theme="light"] {
+    --bg:#FFFFFF; --surface:#FAF9FE; --fg:#14131C; --fg-muted:#62617A; --fg-faint:#8A88A0;
+    --accent:#5546E0; --accent-soft:#6F62F0; --accent-wash:#F3F1FE; --accent-fg:#FFFFFF;
+    --rule:#E4E2F0; --rule-strong:#C9C6E0; --thead-bg:#14131C; --thead-fg:#FFFFFF;
+    --warn:#9A5A08; --warn-wash:#FDF7EC; --warn-rule:#E7D2A8; --good:#1D6B4F;
+  }
+
+  .page {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--f-sans);
+    font-size: 16px;
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+    padding: clamp(2rem, 6vw, 4.5rem) clamp(1.1rem, 5vw, 2rem) 4rem;
+  }
+  .wrap { max-width: 54rem; margin: 0 auto; display: flex; flex-direction: column; gap: var(--gap); }
+
+  /* ---------- tipografía ---------- */
+  h1, h2, h3 { text-wrap: balance; margin: 0; font-weight: 700; letter-spacing: -0.021em; }
+  h1 { font-size: clamp(2.1rem, 6.4vw, 3.15rem); line-height: 1.06; }
+  h1 em { font-style: italic; color: var(--accent); font-weight: 700; }
+  h2 { font-size: clamp(1.32rem, 3.4vw, 1.62rem); line-height: 1.2; }
+  h3 { font-size: 1.03rem; letter-spacing: -0.008em; }
+  p  { margin: 0; max-width: var(--measure); }
+  strong { font-weight: 650; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:focus-visible, summary:focus-visible {
+    outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px;
+  }
+
+  .eyebrow {
+    font-family: var(--f-mono); font-size: .685rem; font-weight: 600;
+    letter-spacing: .17em; text-transform: uppercase; color: var(--accent);
+    display: flex; align-items: center; gap: .5em;
+  }
+  .eyebrow::before {
+    content: ""; width: .42em; height: .42em; border-radius: 50%;
+    background: var(--accent); flex: none;
+  }
+  .kicker {
+    font-family: var(--f-mono); font-size: .7rem; letter-spacing: .15em;
+    text-transform: uppercase; color: var(--fg-faint);
+  }
+  .lede { font-size: 1.075rem; color: var(--fg-muted); }
+  .note { font-size: .875rem; color: var(--fg-muted); }
+  .aside { font-size: .9rem; color: var(--fg-muted); font-style: italic; max-width: var(--measure); }
+
+  /* ---------- estructura ---------- */
+  section { display: flex; flex-direction: column; gap: .95rem; }
+  section > h2 + p { margin-top: -.2rem; }
+  .rule-top { border-top: 2px solid var(--fg); padding-top: var(--gap); }
+
+  header.masthead { display: flex; flex-direction: column; gap: 1rem; }
+  .masthead-top {
+    display: flex; flex-wrap: wrap; gap: .75rem 1.5rem;
+    justify-content: space-between; align-items: baseline;
+  }
+  .stamp {
+    font-family: var(--f-mono); font-size: .7rem; letter-spacing: .13em;
+    text-transform: uppercase; color: var(--accent-fg); background: var(--accent);
+    padding: .3em .7em; border-radius: 2px; white-space: nowrap;
+  }
+
+  /* ---------- tablas ---------- */
+  .tw { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  table {
+    width: 100%; border-collapse: collapse; font-size: .905rem;
+    font-variant-numeric: tabular-nums; min-width: 30rem;
+  }
+  thead th {
+    background: var(--thead-bg); color: var(--thead-fg);
+    font-family: var(--f-mono); font-size: .655rem; font-weight: 600;
+    letter-spacing: .12em; text-transform: uppercase;
+    text-align: right; padding: .72rem .8rem; white-space: nowrap;
+  }
+  thead th:first-child { text-align: left; }
+  tbody td { padding: .63rem .8rem; text-align: right; border-bottom: 1px solid var(--rule); }
+  tbody td:first-child { text-align: left; font-weight: 550; }
+  tbody tr:nth-child(even) { background: var(--surface); }
+  tbody tr.total td {
+    font-weight: 700; border-top: 2px solid var(--rule-strong);
+    border-bottom: none; background: transparent;
+  }
+  tbody tr.hush td { color: var(--fg-muted); }
+  td .sub { display: block; font-size: .8rem; color: var(--fg-muted); font-weight: 400; }
+  .num { font-variant-numeric: tabular-nums; }
+  .pill {
+    font-family: var(--f-mono); font-size: .66rem; letter-spacing: .08em;
+    text-transform: uppercase; padding: .2em .5em; border-radius: 2px;
+    background: var(--accent-wash); color: var(--accent); white-space: nowrap;
+  }
+  .pill.q { background: var(--warn-wash); color: var(--warn); }
+  .pill.n { background: transparent; color: var(--fg-faint); border: 1px solid var(--rule); }
+
+  /* ---------- bloques destacados ---------- */
+  .call {
+    background: var(--accent); color: var(--accent-fg);
+    padding: 1.35rem 1.5rem; border-radius: 3px;
+    display: flex; flex-direction: column; gap: .5rem;
+  }
+  .call h3 { font-size: 1.1rem; }
+  .call p { color: color-mix(in srgb, var(--accent-fg) 88%, var(--accent)); max-width: 62ch; }
+
+  .warn {
+    background: var(--warn-wash); border: 1px solid var(--warn-rule);
+    border-left: 3px solid var(--warn);
+    padding: 1.2rem 1.4rem; border-radius: 3px;
+    display: flex; flex-direction: column; gap: .7rem;
+  }
+  .warn h3 { color: var(--warn); }
+  .warn .kicker { color: var(--warn); }
+
+  .box {
+    border: 1px solid var(--rule); border-radius: 3px;
+    padding: 1.25rem 1.4rem; background: var(--surface);
+    display: flex; flex-direction: column; gap: .8rem;
+  }
+
+  ol.steps { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: .55rem; }
+  ol.steps li { display: flex; gap: .8rem; align-items: baseline; max-width: var(--measure); }
+  ol.steps .mk {
+    font-family: var(--f-mono); font-size: .75rem; font-weight: 700;
+    color: var(--accent); flex: none; width: 1.1em;
+  }
+
+  ul.plain { margin: 0; padding-left: 1.15rem; display: flex; flex-direction: column; gap: .38rem; }
+  ul.plain li { max-width: var(--measure); }
+  ul.plain li::marker { color: var(--accent); }
+
+  .why { display: grid; gap: .9rem; grid-template-columns: 1fr; }
+  @media (min-width: 46rem) { .why { grid-template-columns: repeat(3, 1fr); } }
+  .why > div {
+    border-top: 2px solid var(--accent); padding-top: .7rem;
+    display: flex; flex-direction: column; gap: .35rem;
+  }
+  .why h3 { font-size: .95rem; }
+  .why p { font-size: .885rem; color: var(--fg-muted); }
+
+  .flow {
+    background: var(--thead-bg); color: var(--thead-fg);
+    font-family: var(--f-mono); font-size: .72rem; font-weight: 600;
+    letter-spacing: .16em; text-transform: uppercase;
+    padding: .95rem 1.1rem; border-radius: 3px; text-align: center;
+  }
+
+  footer.foot {
+    border-top: 1px solid var(--rule); padding-top: 1.4rem;
+    display: flex; flex-wrap: wrap; gap: .6rem 1.5rem; justify-content: space-between;
+    font-size: .82rem; color: var(--fg-faint);
+  }
+  footer.foot .mono { font-family: var(--f-mono); letter-spacing: .13em; }
+
+
+  /* ---- reset mínimo (en el artifact lo pone la plataforma; acá no) ---- */
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--bg); }
+  img, svg { max-width: 100%; height: auto; }
+
+  /* ---- índice, para no scrollear a ciegas en el celular ---- */
+  .toc { display: flex; flex-wrap: wrap; gap: .4rem; }
+  .toc a {
+    font-family: var(--f-mono); font-size: .68rem; letter-spacing: .07em;
+    text-transform: uppercase; text-decoration: none;
+    color: var(--fg-muted); border: 1px solid var(--rule);
+    padding: .34em .62em; border-radius: 2px; white-space: nowrap;
+  }
+  .toc a:hover { color: var(--accent); border-color: var(--accent); }
+  section[id] { scroll-margin-top: 1.2rem; }
+  html { scroll-behavior: smooth; }
+
+  /* ---- pista visual de que la tabla scrollea (clave en mobile) ---- */
+  .tw { position: relative; }
+  .tw::after {
+    content: ""; position: absolute; top: 0; right: 0; bottom: 0; width: 2rem;
+    background: linear-gradient(to right, transparent, var(--bg));
+    pointer-events: none;
+  }
+  @media (min-width: 46rem) { .tw::after { display: none; } }
+
+  /* ---- guardar como PDF desde el navegador ---- */
+  @media print {
+    :root {
+      --bg:#fff; --surface:#fff; --fg:#000; --fg-muted:#333; --fg-faint:#555;
+      --thead-bg:#000; --thead-fg:#fff; --rule:#bbb; --rule-strong:#888;
+      --accent:#3B2FB5; --accent-wash:#EEECFB;
+    }
+    .page { padding: 0; }
+    .toc, .flow { display: none; }
+    section, .call, .warn, .box, table { break-inside: avoid; }
+    .tw::after { display: none; }
+    table { font-size: 8.5pt; min-width: 0; }
+    a { text-decoration: none; color: #000; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+</style>
+
+<div class="page">
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="masthead-top">
+      <div class="eyebrow">HATSU × DEENEX</div>
+      <span class="stamp">V1 · corregida</span>
+    </div>
+    <h1>Que cada cliente vuelva <em>solo.</em></h1>
+    <p class="lede">Plan de campañas para agosto de 2026: a qué grupos de clientes le escribimos,
+    por qué canal y con qué expectativa. Todos los números surgen del procesamiento de las bases
+    de HATSU con el motor de segmentación de DEENEX.</p>
+    <p class="kicker">Fecha de corte del análisis: 29 de julio de 2026</p>
+  </header>
+
+  <nav class="toc" aria-label="Secciones del documento"><a href="#metodo">Método</a><a href="#alcance">Alcance</a><a href="#faltante">Dato faltante</a><a href="#mapa">Mapa</a><a href="#numeros">La base</a><a href="#ritmo">Ritmo</a><a href="#grupos">Grupos</a><a href="#contacto">Contacto</a><a href="#campanas">Campañas</a><a href="#porque">Por qué 1.873</a><a href="#calendario">Calendario</a><a href="#control">Control</a><a href="#expectativa">Expectativa</a><a href="#medicion">Medición</a><a href="#cerrar">Pendientes</a><a href="#nota">Metodología</a></nav>
+
+  <div class="flow">Base &nbsp;→&nbsp; Grupos &nbsp;→&nbsp; Campañas &nbsp;→&nbsp; Medición &nbsp;↺</div>
+
+  <!-- ============ METODOLOGÍA ============ -->
+  <section class="rule-top" id="metodo">
+    <div class="eyebrow">Antes de los números</div>
+    <h2>Cómo armamos los grupos</h2>
+    <div class="box">
+      <ol class="steps">
+        <li><span class="mk">A</span><span>Cruzamos las dos bases —ventas y clientes— por dirección de e-mail.</span></li>
+        <li><span class="mk">B</span><span>Llevamos cada compra a <strong>pesos de hoy</strong> usando el IPC del INDEC. Sin esto, una compra de 2023 se compara contra una de 2026 como si valieran lo mismo, y no valen lo mismo.</span></li>
+        <li><span class="mk">C</span><span>Calculamos cuatro señales por cliente: hace cuánto compró, cada cuánto compra, cuánto gastó y hace cuánto es cliente.</span></li>
+        <li><span class="mk">D</span><span>Normalizamos las cuatro para que se puedan comparar entre sí — pesos, cantidad de compras y días no se miden con la misma vara.</span></li>
+        <li><span class="mk">E</span><span>Un algoritmo estadístico (K-Means) encuentra los grupos que <strong>ya existen</strong> en la base, sin que nadie defina los cortes a mano.</span></li>
+        <li><span class="mk">F</span><span>Cruzamos el resultado contra las reglas clásicas de segmentación para verificarlo: <strong>coinciden en el 84%</strong> de los clientes.</span></li>
+      </ol>
+      <p class="note"><strong>Una distinción que conviene tener clara:</strong> los <em>grupos</em> los encuentra
+      el algoritmo. Los <em>umbrales</em> que aparecen más abajo —“hábito” es comprar cada 60 días o menos,
+      “esporádico” es más de 180— son criterios de negocio que elegimos nosotros y que declaramos acá.
+      No son lo mismo y el documento no los mezcla.</p>
+    </div>
+  </section>
+
+  <!-- ============ ALCANCE ============ -->
+  <section class="rule-top" id="alcance">
+    <div class="eyebrow">Alcance del análisis</div>
+    <h2>Qué se procesó</h2>
+    <ul class="plain">
+      <li><strong>Reporte de ventas:</strong> 53.172 pedidos, del 7 de junio de 2023 al 29 de julio de 2026.</li>
+      <li><strong>Base de clientes:</strong> 27.067 registros, que corresponden a 25.348 personas únicas
+        (hay 1.719 fichas duplicadas).</li>
+    </ul>
+    <div class="tw">
+      <table>
+        <thead><tr><th scope="col">Definición</th><th scope="col">Criterio aplicado</th></tr></thead>
+        <tbody>
+          <tr><td>Monto del pedido</td><td>Subtotal − Descuento − Cupón (no incluye el envío)</td></tr>
+          <tr><td>Llave de cliente</td><td>Dirección de e-mail</td></tr>
+          <tr><td>Valor de los montos</td><td>Pesos de julio 2026, ajustados por IPC INDEC</td></tr>
+          <tr><td>Canales incluidos</td><td>Web y apps propias de HATSU</td></tr>
+          <tr><td>Fecha de corte</td><td>29 de julio de 2026</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note"><strong>Sobre los montos.</strong> Entre junio 2023 y junio 2026 los precios se
+    multiplicaron por 6,9. Si se suman los pesos tal como salieron de cada ticket, un cliente de 2023
+    parece haber gastado siete veces menos de lo que gastó. Por eso cada compra se lleva a pesos de hoy
+    antes de agrupar. Los montos de este documento no son comparables con los de la versión anterior.</p>
+    <p class="note"><strong>Sobre los canales.</strong> Los datos cubren la web y las apps de HATSU.
+    Los pedidos de Rappi y PedidosYa no están en este análisis. Un cliente que pide seguido por un
+    agregador y poco por la app propia va a aparecer acá como cliente de baja frecuencia.</p>
+  </section>
+
+  <!-- ============ ADVERTENCIA ============ -->
+  <section class="rule-top" id="faltante">
+    <div class="eyebrow">Hallazgo que condiciona el plan</div>
+    <h2>El reporte de ventas no tiene toda la historia</h2>
+    <div class="warn">
+      <div class="kicker">Faltan 38.847 pedidos · el 42% de la historia</div>
+      <p>Las fichas de cliente de HATSU declaran <strong>92.019 pedidos</strong> acumulados.
+      El reporte de ventas trae <strong>53.172</strong>. La diferencia no está repartida al azar:
+      se concentra en los clientes más antiguos.</p>
+      <div class="tw">
+        <table>
+          <thead>
+            <tr><th scope="col">Antigüedad del alta</th><th scope="col">Personas</th><th scope="col">Sin compras visibles</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Deciles 1 a 7 · las altas más viejas</td><td class="num">17.743</td><td class="num">39% – 66%</td></tr>
+            <tr><td>Decil 8</td><td class="num">2.535</td><td class="num">5,8%</td></tr>
+            <tr><td>Decil 9</td><td class="num">2.535</td><td class="num">0,4%</td></tr>
+            <tr><td>Decil 10 · las altas más recientes</td><td class="num">2.535</td><td class="num">0,3%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Si fuera un problema de canal o de carga, el faltante estaría repartido parejo entre deciles.
+      Que caiga a cero en las altas recientes indica que <strong>el reporte arranca en junio de 2023
+      y todo lo anterior no está</strong>.</p>
+      <p><strong>Consecuencia directa:</strong> las 9.042 personas sin compras en la ventana
+      <em>no son clientes que nunca compraron</em>. Las 9.042 declaran al menos un pedido en su propia
+      ficha. Son clientes que HATSU perdió antes de junio de 2023. Eso cambia por completo el mensaje
+      que hay que escribirles.</p>
+    </div>
+  </section>
+
+  <!-- ============ MAPA ============ -->
+  <section class="rule-top" id="mapa">
+    <div class="eyebrow">Dónde está cada persona</div>
+    <h2>El mapa de la base</h2>
+    <p>Toda persona que aparece en alguna de las dos bases entra en una sola fila de esta tabla.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th scope="col">Grupo</th><th scope="col">Personas</th></tr></thead>
+        <tbody>
+          <tr><td>Fichas de cliente únicas</td><td class="num">25.348</td></tr>
+          <tr class="hush"><td>— con compras dentro de la ventana analizada</td><td class="num">16.306</td></tr>
+          <tr class="hush"><td>— sin compras dentro de la ventana <span class="sub">compraron antes de junio 2023</span></td><td class="num">9.042</td></tr>
+          <tr><td>Compraron sin tener ficha de cliente</td><td class="num">135</td></tr>
+          <tr class="total"><td>Total de personas alcanzables</td><td class="num">25.483</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="aside">La versión anterior analizaba 16.441 personas y no explicaba qué pasaba con las
+    otras nueve mil. Acá cierra: 25.348 + 135 = 25.483.</p>
+  </section>
+
+  <!-- ============ LA BASE EN NÚMEROS ============ -->
+  <section class="rule-top" id="numeros">
+    <div class="eyebrow">Lo que encontramos</div>
+    <h2>La base en números</h2>
+    <div class="tw">
+      <table>
+        <thead><tr><th scope="col">Indicador</th><th scope="col">Valor</th><th scope="col">Sobre el total</th></tr></thead>
+        <tbody>
+          <tr><td>Clientes con compras en la ventana</td><td class="num">16.441</td><td class="num">—</td></tr>
+          <tr><td>Pedidos analizados</td><td class="num">53.172</td><td class="num">—</td></tr>
+          <tr><td>Sin comprar hace más de 6 meses</td><td class="num">11.767</td><td class="num">72%</td></tr>
+          <tr><td>Compraron una sola vez</td><td class="num">9.493</td><td class="num">58%</td></tr>
+          <tr><td>Facturación que hace el 8% que más gasta</td><td class="num">47%</td><td class="num">—</td></tr>
+          <tr><td>Facturación que hace el 20% que más gasta</td><td class="num">67%</td><td class="num">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ RITMO ============ -->
+  <section class="rule-top" id="ritmo">
+    <div class="eyebrow">El concepto central</div>
+    <h2>Qué es el “ritmo” de un cliente</h2>
+    <p><strong>El ritmo es el tiempo promedio que pasa entre las compras de una misma persona</strong>,
+    calculado individualmente para cada una. Alguien que compró 8 veces en dos años tiene 7 intervalos:
+    el promedio de esos 7 es su ritmo.</p>
+    <p>Decimos que un cliente <strong>rompió su ritmo</strong> cuando lleva más del doble de su propio
+    promedio sin comprar. No es un plazo fijo igual para todos: al que compra cada 20 días lo marcamos
+    a los 40, y al que compra cada 90 lo marcamos a los 180.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th scope="col">Indicador</th><th scope="col">Valor</th><th scope="col">Sobre quién se mide</th></tr></thead>
+        <tbody>
+          <tr><td>Volvieron a comprar al menos una vez</td><td class="num">6.948</td><td class="num">42% de los 16.441</td></tr>
+          <tr><td>Ritmo típico</td><td class="num">62 días</td><td class="num">los 6.948 que repiten</td></tr>
+          <tr><td>Con hábito instalado <span class="sub">vuelven cada 60 días o menos</span></td><td class="num">3.414</td><td class="num">49% de los que repiten</td></tr>
+          <tr><td>Esporádicos <span class="sub">más de 180 días entre compras</span></td><td class="num">1.234</td><td class="num">18% de los que repiten</td></tr>
+          <tr><td>Rompieron su ritmo en los últimos 6 meses</td><td class="num">639</td><td class="num">9% de los que repiten</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Los 639 se abren en dos, y la diferencia importa:
+    <strong>420 tienen 3 o más compras</strong>, así que tienen un ritmo real medido sobre varios
+    intervalos. Los otros <strong>219 compraron solo dos veces</strong>: ahí hay un único intervalo,
+    y una sola distancia entre dos compras no alcanza para llamarla hábito. Por eso van a campañas
+    distintas, con mensajes distintos.</p>
+  </section>
+
+  <div class="call">
+    <h3>420 clientes de alto valor están rompiendo su ritmo ahora mismo</h3>
+    <p>El cliente típico de este grupo lleva 8 compras, venía cada 29 días y hace 118 días que no
+    aparece. Gastó $442.714 a valor de hoy. No son clientes perdidos hace años: se están yendo en
+    este momento, y por eso son los más recuperables de toda la base.</p>
+  </div>
+
+  <!-- ============ GRUPOS ============ -->
+  <section class="rule-top" id="grupos">
+    <div class="eyebrow">Los grupos</div>
+    <h2>Lo que identificó el motor</h2>
+    <p>El algoritmo cruza las cuatro señales de cada cliente y encuentra cuatro grupos.
+    Todas las cifras de la tabla son <strong>medianas</strong>: el valor del cliente que queda justo
+    en el medio del grupo. El promedio se estira con los casos extremos y da una imagen equivocada.</p>
+    <div class="tw">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Grupo</th><th scope="col">Clientes</th><th scope="col">% base</th>
+            <th scope="col">% fact.</th><th scope="col">Compras</th>
+            <th scope="col">Días sin comprar</th><th scope="col">Gasto</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>El núcleo <span class="sub">muchas compras, gasto alto</span></td>
+            <td class="num">1.397</td><td class="num">8,5%</td><td class="num">47,6%</td>
+            <td class="num">14</td><td class="num">123</td><td class="num">$836.601</td>
+          </tr>
+          <tr>
+            <td>Recurrentes que se enfriaron <span class="sub">tenían hábito, hace 10 meses que no vuelven</span></td>
+            <td class="num">2.974</td><td class="num">18,1%</td><td class="num">24,4%</td>
+            <td class="num">4</td><td class="num">292</td><td class="num">$244.940</td>
+          </tr>
+          <tr>
+            <td>Probaron una vez · alta reciente <span class="sub">se anotaron hace ~8 meses y no repitieron</span></td>
+            <td class="num">6.479</td><td class="num">39,4%</td><td class="num">15,4%</td>
+            <td class="num">1</td><td class="num">213</td><td class="num">$65.691</td>
+          </tr>
+          <tr>
+            <td>Probaron una vez · hace más de 2 años <span class="sub">alta vieja, una sola compra</span></td>
+            <td class="num">5.591</td><td class="num">34,0%</td><td class="num">12,6%</td>
+            <td class="num">1</td><td class="num">873</td><td class="num">$60.521</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">El grupo que llamamos <strong>“alta reciente”</strong> se define por hace cuánto la
+    persona es cliente, no por hace cuánto compró. Son altas de hace unos ocho meses que compraron una
+    vez y no volvieron. Vale la aclaración porque “reciente” se lee al revés con facilidad.</p>
+  </section>
+
+  <!-- ============ CONTACTO ============ -->
+  <section class="rule-top" id="contacto">
+    <div class="eyebrow">Por qué canal llegamos</div>
+    <h2>A quién se le puede escribir</h2>
+    <div class="tw">
+      <table>
+        <thead><tr><th scope="col">Dato de contacto</th><th scope="col">Clientes</th><th scope="col">% de la base</th></tr></thead>
+        <tbody>
+          <tr><td>Con celular · permite WhatsApp</td><td class="num">16.436</td><td class="num">100,0%</td></tr>
+          <tr><td>Sin ningún celular</td><td class="num">5</td><td class="num">0,03%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Prácticamente toda la base tiene celular registrado, así que las campañas de agosto se ejecutan
+    por WhatsApp, que además tiene una tasa de respuesta muy superior al e-mail.</p>
+    <p class="note">Este número mejoró respecto de la versión anterior por una razón concreta:
+    los datos de contacto de 135 clientes no están en la base de clientes pero <strong>sí están en el
+    reporte de ventas</strong>. Antes figuraban como “imposibles de contactar”. Se les puede escribir.</p>
+    <p class="note">El e-mail no se reporta como cobertura porque es la llave del cruce: nadie puede
+    entrar a este análisis sin e-mail. Decir que el 99% tiene e-mail no aporta información.</p>
+  </section>
+
+  <!-- ============ CAMPAÑAS ============ -->
+  <section class="rule-top" id="campanas">
+    <div class="eyebrow">Las campañas</div>
+    <h2>Tres para agosto</h2>
+    <p>Cada cliente entra en una sola campaña: no hay superposición entre listas.</p>
+    <div class="tw">
+      <table>
+        <thead>
+          <tr><th scope="col">Campaña</th><th scope="col">A quién</th><th scope="col">Personas</th><th scope="col">Cuándo</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1 · Rescate de ritmo roto</td><td>3+ compras, se están yendo ahora</td><td class="num">420</td><td>Semana 1-2</td></tr>
+          <tr><td>2 · Segunda compra</td><td>Compraron una vez hace 1 a 4 meses</td><td class="num">953</td><td>Semana 2-3</td></tr>
+          <tr><td>3 · Reconquista profunda <span class="pill">piloto</span></td><td>Perdidos antes de junio 2023</td><td class="num">500</td><td>Semana 3-4</td></tr>
+          <tr class="total"><td>Total agosto</td><td></td><td class="num">1.873</td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Campaña 1 · Rescate de ritmo roto</h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th scope="col">Dato del grupo</th><th scope="col">Valor</th></tr></thead>
+        <tbody>
+          <tr><td>Personas</td><td class="num">420 · todas con WhatsApp</td></tr>
+          <tr><td>Compras acumuladas (mediana)</td><td class="num">8</td></tr>
+          <tr><td>Ritmo de compra</td><td class="num">cada 29 días</td></tr>
+          <tr><td>Días sin comprar (mediana)</td><td class="num">118</td></tr>
+          <tr><td>Gasto histórico (mediana)</td><td class="num">$442.714</td></tr>
+          <tr><td>Ticket típico</td><td class="num">$58.884</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>Qué le pasa a esta gente.</strong> Compraban cada cuatro semanas y llevan casi cuatro
+    meses sin aparecer. Son los clientes de mayor valor de toda la base y están en proceso de irse.
+    Es la campaña más urgente y la de mayor retorno esperado por persona.</p>
+    <p><strong>Enfoque del mensaje.</strong> Reconocimiento antes que descuento. Son clientes que ya
+    conocen y eligen la marca: el objetivo es que se sientan valorados y vuelvan, no comprarles el
+    regreso con un incentivo alto.</p>
+
+    <h3>Campaña 2 · Segunda compra</h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th scope="col">Dato del grupo</th><th scope="col">Valor</th></tr></thead>
+        <tbody>
+          <tr><td>Personas</td><td class="num">953 · 947 con WhatsApp</td></tr>
+          <tr><td>Compras acumuladas</td><td class="num">1</td></tr>
+          <tr><td>Días desde su única compra (mediana)</td><td class="num">76</td></tr>
+          <tr><td>Gasto histórico (mediana)</td><td class="num">$58.420</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>Qué le pasa a esta gente.</strong> Probaron el servicio hace entre uno y cuatro meses y
+    no volvieron. No están enojados: no llegaron a hacerse el hábito. Ya cruzaron la barrera más
+    difícil, que es la primera compra, y todavía tienen la marca fresca.</p>
+    <p><strong>Enfoque del mensaje.</strong> Invitación a volver a probar, no “te extrañamos”.
+    Con una sola compra no hay una relación que extrañar.</p>
+
+    <h3>Campaña 3 · Reconquista profunda <span class="pill">piloto</span></h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th scope="col">Dato del grupo</th><th scope="col">Valor</th></tr></thead>
+        <tbody>
+          <tr><td>Personas</td><td class="num">500 · todas con WhatsApp</td></tr>
+          <tr><td>Pedidos históricos declarados (mediana)</td><td class="num">9</td></tr>
+          <tr><td>El que más pidió del grupo</td><td class="num">103 pedidos</td></tr>
+          <tr><td>Última compra registrada</td><td class="num">anterior a junio 2023</td></tr>
+          <tr><td>Pool total del que sale el piloto</td><td class="num">9.009</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>Qué le pasa a esta gente.</strong> Son los clientes que la versión anterior de este
+    documento contaba como “nunca compraron”. No es así: compraron, y bastante. El cliente típico de
+    este piloto hizo 9 pedidos y después desapareció, hace más de tres años.</p>
+    <p><strong>Por qué estos 500 y no otros.</strong> El archivo de clientes no trae fecha de registro,
+    pero sí trae el número de identificación, que es correlativo, y la cantidad de pedidos históricos
+    de cada persona. Con esas dos señales ordenamos el pool de 9.009 por valor y por cuán recientemente
+    se dieron de alta, y el piloto se lleva los 500 mejores. No es una muestra al azar.</p>
+    <p><strong>Enfoque del mensaje.</strong> Reencuentro, no adquisición. Esta gente conoce el producto
+    y ya lo eligió muchas veces; lo que hay que resolver es por qué dejó de hacerlo.</p>
+  </section>
+
+  <!-- ============ POR QUÉ TAN POCOS ============ -->
+  <section class="rule-top" id="porque">
+    <div class="eyebrow">La pregunta obvia</div>
+    <h2>Por qué escribimos a 1.873 y no a 25.000</h2>
+    <div class="why">
+      <div>
+        <h3>Hay gente a la que conviene no escribirle</h3>
+        <p>2.410 personas están comprando bien: 1.179 compraron hace menos de un mes y 1.231 siguen
+        en su ritmo normal. Mandarles una promoción es regalar descuento a quien iba a comprar igual.</p>
+      </div>
+      <div>
+        <h3>Primero lo que más rinde</h3>
+        <p>Rescatar a alguien que venía cada 29 días vale más que escribirle a alguien que se fue hace
+        tres años. El orden de las campañas sigue el valor recuperable, no el tamaño del grupo.</p>
+      </div>
+      <div>
+        <h3>Aprender antes de escalar</h3>
+        <p>WhatsApp restringe las cuentas que emiten mucho volumen en poco tiempo. Y si se manda a
+        16.000 personas un mensaje que no funciona, se quemó la base entera. Con 1.592 se mide,
+        se ajusta y en septiembre se escala con datos propios.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CALENDARIO ============ -->
+  <section class="rule-top" id="calendario">
+    <div class="eyebrow">Cobertura completa</div>
+    <h2>Cuándo le toca a cada uno</h2>
+    <p>Las 25.483 personas de la base tienen un destino asignado. Ninguna queda sin explicación.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th scope="col">Grupo</th><th scope="col">Personas</th><th scope="col">Cuándo</th></tr></thead>
+        <tbody>
+          <tr><td>Rescate de ritmo roto</td><td class="num">420</td><td><span class="pill">Agosto</span></td></tr>
+          <tr><td>Segunda compra</td><td class="num">953</td><td><span class="pill">Agosto</span></td></tr>
+          <tr><td>Reconquista profunda · piloto</td><td class="num">500</td><td><span class="pill">Agosto</span></td></tr>
+          <tr><td>Reconquista de alto valor <span class="sub">5 compras, 495 días sin comprar</span></td><td class="num">2.339</td><td><span class="pill">Septiembre</span></td></tr>
+          <tr><td>Tercera compra <span class="sub">los 219 con solo 2 compras que cortaron</span></td><td class="num">219</td><td><span class="pill">Septiembre</span></td></tr>
+          <tr><td>Reconquista profunda · escalado <span class="sub">según resultado del piloto</span></td><td class="num">8.509</td><td><span class="pill">Septiembre</span></td></tr>
+          <tr><td>Segunda compra tardía <span class="sub">1 compra, entre 4 y 12 meses</span></td><td class="num">2.356</td><td><span class="pill q">Octubre</span></td></tr>
+          <tr><td>Reconquista fría <span class="sub">1 compra, más de un año</span></td><td class="num">5.840</td><td><span class="pill q">Q4</span></td></tr>
+          <tr><td>Reconquista de bajo valor <span class="sub">repiten, +6 meses, gasto bajo</span></td><td class="num">1.904</td><td><span class="pill q">Q4</span></td></tr>
+          <tr class="hush"><td>Compraron hace menos de un mes</td><td class="num">1.179</td><td><span class="pill n">No tocar</span></td></tr>
+          <tr class="hush"><td>Repiten y siguen en su ritmo</td><td class="num">1.231</td><td><span class="pill n">No tocar</span></td></tr>
+          <tr class="hush"><td>Sin celular registrado</td><td class="num">33</td><td><span class="pill n">Solo e-mail</span></td></tr>
+          <tr class="total"><td>Total</td><td class="num">25.483</td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ VOLUMEN Y CONTROL ============ -->
+  <section class="rule-top" id="control">
+    <div class="eyebrow">Volumen y control</div>
+    <h2>Cuánto se envía y contra qué se compara</h2>
+    <p>En cada campaña se reserva un 15% de la lista que no recibe ningún mensaje. Ese grupo de control
+    permite comparar, a fin de mes, cuánto volvieron a comprar los contactados frente a los no
+    contactados.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th scope="col">Campaña</th><th scope="col">Total</th><th scope="col">Se contacta</th><th scope="col">Control</th></tr></thead>
+        <tbody>
+          <tr><td>1 · Rescate de ritmo roto</td><td class="num">420</td><td class="num">357</td><td class="num">63</td></tr>
+          <tr><td>2 · Segunda compra</td><td class="num">953</td><td class="num">810</td><td class="num">143</td></tr>
+          <tr><td>3 · Reconquista profunda</td><td class="num">500</td><td class="num">425</td><td class="num">75</td></tr>
+          <tr class="total"><td>Total agosto</td><td class="num">1.873</td><td class="num">1.592</td><td class="num">281</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Los 1.592 mensajes se distribuyen a lo largo del mes, a un ritmo de <strong>80 por día hábil</strong>
+    (agosto de 2026 tiene 20, descontando el feriado del 17). El envío es deliberadamente gradual para
+    proteger la línea de HATSU.</p>
+    <div class="box">
+      <div class="kicker">Qué se puede y qué no se puede concluir en el primer mes</div>
+      <p class="note">Con 63 personas de control, la campaña 1 espera aproximadamente
+      <strong>1 compra</strong> en su grupo de control. Eso no alcanza para separar el efecto de la
+      campaña del ruido: campaña por campaña, la lectura de agosto es <strong>direccional</strong>.</p>
+      <p class="note">Sumando las tres —1.592 contactados contra 281 de control— sí hay volumen para
+      una lectura estadísticamente sólida. <strong>Por eso el resultado de agosto se mide a nivel mes,
+      y la lectura por campaña recién queda firme cuando se acumulen dos o tres meses.</strong>
+      Preferimos decirlo ahora y no en septiembre.</p>
+    </div>
+  </section>
+
+  <!-- ============ EXPECTATIVA ============ -->
+  <section class="rule-top" id="expectativa">
+    <div class="eyebrow">Expectativa</div>
+    <h2>Qué resultado esperamos</h2>
+    <p><strong>Las siguientes cifras son una proyección, no un dato medido.</strong> Cada campaña se
+    proyecta con su propia tasa de respuesta y con el ticket típico de su propio grupo.</p>
+    <div class="tw">
+      <table>
+        <thead>
+          <tr><th scope="col">Campaña</th><th scope="col">Se contacta</th><th scope="col">Tasa supuesta</th>
+          <th scope="col">Ticket del grupo</th><th scope="col">Compras</th><th scope="col">Facturación</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1 · Rescate de ritmo roto</td><td class="num">357</td><td class="num">5%</td><td class="num">$58.884</td><td class="num">17,9</td><td class="num">$1.051.000</td></tr>
+          <tr><td>2 · Segunda compra</td><td class="num">810</td><td class="num">5%</td><td class="num">$58.420</td><td class="num">40,5</td><td class="num">$2.366.000</td></tr>
+          <tr><td>3 · Reconquista profunda</td><td class="num">425</td><td class="num">2%</td><td class="num">$55.222</td><td class="num">8,5</td><td class="num">$469.000</td></tr>
+          <tr class="total"><td>Total agosto</td><td class="num">1.592</td><td class="num">—</td><td class="num">—</td><td class="num">66,8</td><td class="num">$3.886.000</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note"><strong>Por qué la campaña 3 va al 2% y no al 5%.</strong> Son personas que hace
+    más de tres años que no compran. Aplicarles la misma tasa que a alguien que se fue hace cuatro
+    meses no sería conservador, sería optimista.</p>
+    <p class="note"><strong>Un supuesto que revisamos y descartamos.</strong> Esperábamos que el ticket
+    de una compra de reactivación fuera bastante menor al de la base. Medido, el ticket de una primera
+    compra es $55.222 contra $56.333 de la base: prácticamente el mismo. Lo que separa a una campaña de
+    otra es la tasa de respuesta, no el tamaño de la compra.</p>
+    <p class="note">Las compras se muestran con decimal a propósito: es el resultado de un cálculo,
+    no un conteo de pedidos reales.</p>
+  </section>
+
+  <!-- ============ MEDICIÓN ============ -->
+  <section class="rule-top" id="medicion">
+    <div class="eyebrow">Medición</div>
+    <h2>Cómo se comprueba el resultado</h2>
+    <ul class="plain">
+      <li>Durante el mes se registra, por cada persona: si el mensaje se envió, si se entregó y si se respondió.</li>
+      <li>El 1 de septiembre HATSU envía la base de ventas actualizada.</li>
+      <li>El motor compara e identifica cuántos de los clientes contactados volvieron a comprar.</li>
+      <li>Ese resultado se contrasta con el grupo de control, leído a nivel mes, para aislar el efecto real.</li>
+    </ul>
+    <p class="aside">Este es el número que ordena el trabajo del mes siguiente: qué campaña funcionó,
+    con qué grupo y con qué oferta.</p>
+  </section>
+
+  <!-- ============ DEFINICIONES ============ -->
+  <section class="rule-top" id="cerrar">
+    <div class="eyebrow">Próximos pasos</div>
+    <h2>Definiciones para cerrar con HATSU</h2>
+    <div class="tw">
+      <table>
+        <thead><tr><th scope="col">Definición</th><th scope="col">Por qué se necesita</th></tr></thead>
+        <tbody>
+          <tr><td>Techo de descuento</td><td>Determina la oferta de cada campaña. El criterio es usar el mínimo que funcione y reservar el máximo para el grupo más frío.</td></tr>
+          <tr><td>Historial anterior a junio 2023</td><td>Faltan 38.847 pedidos. Si el sistema los tiene, mejora la segmentación de 9.042 personas y corrige la antigüedad de varios miles más.</td></tr>
+          <tr><td>Pedidos de Rappi y PedidosYa</td><td>No están en los datos. Si ese volumen es relevante, hoy estamos subestimando la frecuencia real de una parte de la base.</td></tr>
+          <tr><td>Línea de WhatsApp</td><td>Recomendamos una línea dedicada a promociones, distinta de la que recibe pedidos, para proteger la operación.</td></tr>
+          <tr><td>Consentimiento</td><td>La base no incluye un campo de consentimiento. Necesitamos que HATSU confirme que sus términos y condiciones habilitan el contacto comercial.</td></tr>
+          <tr><td>Aplicación del descuento</td><td>Para agosto, un código que el personal reconozca en el local. La generación automática de cupones es una etapa posterior.</td></tr>
+          <tr><td>Responsable de responder</td><td>Las respuestas las atiende una persona de HATSU. Definir quién, con el detalle de la campaña y la oferta vigente a mano.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ NOTA METODOLÓGICA ============ -->
+  <section class="rule-top" id="nota">
+    <div class="eyebrow">Nota metodológica</div>
+    <h2>Qué es dato y qué es estimación</h2>
+    <ul class="plain">
+      <li><strong>Son datos</strong> —no estimaciones— todas las cifras anteriores a la sección
+        Expectativa: cantidades de clientes, pedidos, montos, días sin comprar, ritmo de compra,
+        composición de los grupos y datos de contacto. Salen del procesamiento de las bases de HATSU.</li>
+      <li><strong>Son supuestos declarados</strong> las tasas de respuesta (5% para rescate y segunda
+        compra, 2% para reconquista profunda) y la variación del IPC de julio 2026, que todavía no
+        publicó el INDEC: se usó +2,21%, el promedio de los tres meses anteriores.</li>
+      <li><strong>Los montos están en pesos de julio 2026</strong>, ajustados con el IPC Nacional Nivel
+        General del INDEC. No son comparables con los de la versión anterior de este documento, que
+        estaban en pesos corrientes de cada operación.</li>
+      <li><strong>Los grupos los determinó el algoritmo</strong> a partir del comportamiento de compra.
+        Los umbrales de hábito, de esporádico y de ritmo roto son criterios de negocio, declarados en
+        la primera sección.</li>
+      <li><strong>Calidad del dato:</strong> los 53.172 pedidos tienen fecha, e-mail y monto válidos, y
+        todos figuran como aceptados. Hay 302 casos de un mismo cliente con más de un pedido el mismo
+        día (306 pedidos, el 0,6% del total); si son pedidos partidos, inflan levemente la frecuencia.</li>
+    </ul>
+  </section>
+
+  <footer class="foot">
+    <span>DEENEX Activa · Plan de campañas HATSU · Agosto 2026</span>
+    <span class="mono">deenex.tech</span>
+  </footer>
+
+</div>
+</div>
+
+</body>
+</html>
